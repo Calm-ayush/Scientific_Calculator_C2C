@@ -1,20 +1,20 @@
 import streamlit as lit
 import math
 
-#session state (this helps so that whenever a new button is cliked the previous state of calculator remains and not get cleared)
+#session state (this helps so that whenever a new button is clicked the previous state of calculator remains and not get cleared)
 if "currentstate" not in lit.session_state:
-    lit.session_state.currentstate=""  #so if there is no last statt it creates a new and starts code
+    lit.session_state.currentstate=""  #so if there is no last state it creates a new and starts code
 
 def button(x):
     lit.session_state.currentstate+=str(x) #this adds the number pressed to the state
 
 def reset():
-    lit.session_state.currentstate="" #this clears the state when clear button hit
+    lit.session_state.currentstate="" #this clears the state when clear button is hit
 
 def calculate():
-    lit.session_state.currentstate = str(eval(lit.session_state.currentstate)) #this will take tge string and tell python to treat it like actual code and calculate the expresision
+    lit.session_state.currentstate = str(eval(lit.session_state.currentstate)) #this will take the string and tell python to treat it like actual code and calculate the expresision
 
-def advanced(operation): #this will assign whatver operator we want to the function so when we call it we get answer for it
+def advanced(operation): #this will assign whatever operator we want to the function so when we call it we get answer for it
     y=float(lit.session_state.currentstate)
 
     if operation =="sin":
